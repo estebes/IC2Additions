@@ -1,8 +1,10 @@
 package com.estebes.ic2additions;
 
 import com.estebes.ic2additions.init.BlockInit;
+import com.estebes.ic2additions.init.ItemInit;
 import com.estebes.ic2additions.oregen.OreGenerator;
 import com.estebes.ic2additions.proxy.ServerProxy;
+import com.estebes.ic2additions.recipes.FurnaceRecipes;
 import com.estebes.ic2additions.recipes.MaceratorRecipes;
 import com.estebes.ic2additions.reference.Reference;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -27,10 +29,6 @@ public class IC2Additions
     public void preInit(FMLPreInitializationEvent preinit)
     {
         //PacketHandler.init();
-
-        BlockInit.init();
-
-        //ItemInit.init();
     }
 
     @Mod.EventHandler
@@ -38,9 +36,15 @@ public class IC2Additions
     {
         //NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 
+        BlockInit.init();
+
+        ItemInit.init();
+
         //TileEntityInit.init();
 
-        OreGenerator.INSTANCE.addFeature(BlockInit.oreBauxite, 15, 1);
+        //OreGenerator.INSTANCE.addFeature(BlockInit.oreBauxite, 32, 1);
+
+        OreGenerator.INSTANCE.addFeature(BlockInit.oreIridium, 3, 1, 1, 128);
 
         GameRegistry.registerWorldGenerator(OreGenerator.INSTANCE, 0);
 
@@ -50,6 +54,8 @@ public class IC2Additions
     @EventHandler
     public void postInit(FMLPostInitializationEvent postinit)
     {
+        FurnaceRecipes.init();
+
         MaceratorRecipes.init();
     }
 

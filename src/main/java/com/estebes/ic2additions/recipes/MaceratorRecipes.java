@@ -1,10 +1,16 @@
 package com.estebes.ic2additions.recipes;
 
+import com.estebes.ic2additions.init.BlockInit;
+import com.estebes.ic2additions.util.CrushedOres;
+import com.estebes.ic2additions.util.Ores;
 import ic2.api.recipe.RecipeInputItemStack;
 import ic2.api.recipe.Recipes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MaceratorRecipes
 {
@@ -33,5 +39,11 @@ public class MaceratorRecipes
         // Nether Quartz Ore
         Recipes.macerator.addRecipe(new RecipeInputItemStack(new ItemStack(Blocks.quartz_ore), 1), null,
                 new ItemStack(Items.quartz, 2));
+
+        for(Ores ore : Ores.values())
+        {
+            /*Recipes.macerator.addRecipe(new RecipeInputItemStack(new ItemStack(BlockInit.oreSilver), 1), null,
+                    ore.getMaceratorRecipe());*/
+        }
     }
 }

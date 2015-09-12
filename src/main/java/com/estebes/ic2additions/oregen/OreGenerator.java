@@ -7,6 +7,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.Random;
 
@@ -16,13 +18,11 @@ public class OreGenerator implements IWorldGenerator
 
         private int amount;
         private int minY, maxY;
-        private double chance;
 
-        private WorldGenInfo(int amount, int minY, int maxY, double chance) {
+        private WorldGenInfo(int amount, int minY, int maxY) {
             this.amount = amount;
             this.minY = minY;
             this.maxY = maxY;
-            this.chance = chance;
         }
     }
 
@@ -32,28 +32,30 @@ public class OreGenerator implements IWorldGenerator
 
     public void addFeature(Block block, int count, int amount)
     {
-        addFeature(block, count, amount, 40, 128);
+        //
+        addFeature(block, count, amount, 40, 60);
     }
 
     public void addFeature(Block block, int count, int amount, int minY, int maxY)
     {
-        addFeature(block, count, amount, minY, maxY, 1);
-    }
-
-    public void addFeature(Block block, int count, int amount, int minY, int maxY, double chance)
-    {
-        map.put(new WorldGenMinable(block, count), new WorldGenInfo(amount, minY, maxY, chance));
+        //
+        map.put(new WorldGenMinable(block, count), new WorldGenInfo(amount, minY, maxY));
     }
 
     protected void genStandardOre(WorldGenMinable gen, WorldGenInfo info, World world, Random random, int x, int z)
     {
-        for (int l = 0; l < info.amount; ++l)
+        int var15 = Integer.parseInt((new SimpleDateFormat("Mdd")).format(new Date()));
+        int baseScale = Math.round((float)(var15 * 0.1));
+        int baseCount = 1 * baseScale / 64;
+        int count = (int)Math.round(random.nextGaussian() * Math.sqrt((double)baseCount) + (double)baseCount);
+        for (int l = 0; l < count; ++l)
         {
-            if (random.nextDouble() < info.chance)
+            int avgX = x + random.nextInt(16);
+            int avgY = random.nextInt(64 * var15 / 64);
+            //info.minY + random.nextInt(info.maxY - info.minY) + 1;
+            int avgZ = z + random.nextInt(16);
+            if (random.nextDouble() < 0.5D)
             {
-                int avgX = x + random.nextInt(16);
-                int avgY = info.minY + random.nextInt(info.maxY - info.minY) + 1;
-                int avgZ = z + random.nextInt(16);
                 gen.generate(world, random, avgX, avgY, avgZ);
             }
         }
