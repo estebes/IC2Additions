@@ -9,8 +9,10 @@ item.PlateGold.name=Gold Plate
 item.PlateIron.name=Iron Plate
 item.PlateLead.name=Lead Plate
 item.PlateSilver.name=Silver Plate
+item.PlateStainlessSteel.name=Stainless Steel Plate
 item.PlateSteel.name=Steel Plate
 item.PlateTin.name=Tin Plate
+item.PlateTitanium.name=Titanium Plate
 
 
 

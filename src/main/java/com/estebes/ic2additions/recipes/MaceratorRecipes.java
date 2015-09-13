@@ -40,13 +40,13 @@ public class MaceratorRecipes
         Recipes.macerator.addRecipe(new RecipeInputItemStack(new ItemStack(Blocks.quartz_ore), 1), null,
                 new ItemStack(Items.quartz, 2));
 
-        for(Ores ore : Ores.values())
+        /*for(Ores ore : Ores.values())
         {
             if(Recipes.macerator.getOutputFor(ore.getItemStack(), false) == null)
             {
                 Recipes.macerator.addRecipe(new RecipeInputItemStack(ore.getItemStack()), null,
                         ore.getMaceratorRecipe());
             }
-        }
+        }*/
     }
 }

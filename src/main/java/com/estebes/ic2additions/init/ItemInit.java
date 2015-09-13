@@ -6,6 +6,7 @@ import com.estebes.ic2additions.reference.Reference;
 import com.estebes.ic2additions.util.Plates;
 import com.estebes.ic2additions.util.SolidFuels;
 import cpw.mods.fml.common.registry.GameRegistry;
+import ic2.api.item.IC2Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -24,5 +25,6 @@ public class ItemInit
         {
             OreDictionary.registerOre(plate.getOreDictName(), new ItemStack(itemPlate, 1, plate.ordinal()));
         }
+        OreDictionary.registerOre("copperCable", new ItemStack(IC2Items.getItem("copperCableItem").getItem(), 1));
     }
 }

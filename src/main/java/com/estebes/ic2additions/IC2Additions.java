@@ -5,7 +5,6 @@ import com.estebes.ic2additions.init.ItemInit;
 import com.estebes.ic2additions.init.TileEntityInit;
 import com.estebes.ic2additions.oregen.OreGenerator;
 import com.estebes.ic2additions.proxy.ServerProxy;
-import com.estebes.ic2additions.recipes.FurnaceRecipes;
 import com.estebes.ic2additions.recipes.MaceratorRecipes;
 import com.estebes.ic2additions.reference.Reference;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -55,8 +54,6 @@ public class IC2Additions
     @EventHandler
     public void postInit(FMLPostInitializationEvent postinit)
     {
-        FurnaceRecipes.init();
-
         MaceratorRecipes.init();
     }
 

@@ -1,7 +1,6 @@
 package com.estebes.ic2additions.util;
 
 import com.estebes.ic2additions.reference.Reference;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public enum Plates
 {
@@ -12,7 +11,8 @@ public enum Plates
     PLATE_LEAD("PlateLead", "plateLead"),
     PLATE_SILVER("PlateSilver", "plateSilver"),
     PLATE_STEEL("PlateSteel", "plateSteel"),
-    PLATE_TIN("PlateTin", "plateTin");
+    PLATE_TIN("PlateTin", "plateTin"),
+    PLATE_TITANIUM("PlateTitanium", "plateTitanium");
 
     private final String itemName;
     private final String oreDictName;
