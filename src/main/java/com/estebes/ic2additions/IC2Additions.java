@@ -2,6 +2,7 @@ package com.estebes.ic2additions;
 
 import com.estebes.ic2additions.init.BlockInit;
 import com.estebes.ic2additions.init.ItemInit;
+import com.estebes.ic2additions.init.TileEntityInit;
 import com.estebes.ic2additions.oregen.OreGenerator;
 import com.estebes.ic2additions.proxy.ServerProxy;
 import com.estebes.ic2additions.recipes.FurnaceRecipes;
@@ -40,7 +41,7 @@ public class IC2Additions
 
         ItemInit.init();
 
-        //TileEntityInit.init();
+        TileEntityInit.init();
 
         //OreGenerator.INSTANCE.addFeature(BlockInit.oreBauxite, 32, 1);
 

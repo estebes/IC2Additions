@@ -42,8 +42,11 @@ public class MaceratorRecipes
 
         for(Ores ore : Ores.values())
         {
-            /*Recipes.macerator.addRecipe(new RecipeInputItemStack(new ItemStack(BlockInit.oreSilver), 1), null,
-                    ore.getMaceratorRecipe());*/
+            if(Recipes.macerator.getOutputFor(ore.getItemStack(), false) == null)
+            {
+                Recipes.macerator.addRecipe(new RecipeInputItemStack(ore.getItemStack()), null,
+                        ore.getMaceratorRecipe());
+            }
         }
     }
 }

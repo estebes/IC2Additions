@@ -2,3 +2,15 @@
 tile.OreBauxite.name=Bauxite Ore
 tile.OreSilver.name=Silver Ore
 
+# Plates
+item.PlateBronze.name=Bronze Plate
+item.PlateCopper.name=Copper Plate
+item.PlateGold.name=Gold Plate
+item.PlateIron.name=Iron Plate
+item.PlateLead.name=Lead Plate
+item.PlateSilver.name=Silver Plate
+item.PlateSteel.name=Steel Plate
+item.PlateTin.name=Tin Plate
+
+
+

@@ -30,11 +30,11 @@ public class FurnaceRecipes
             Iterator iterator = set.iterator();
             while(iterator.hasNext()) {
                 Map.Entry mentry = (Map.Entry)iterator.next();
-                CokeOvenRecipes.getCokeOvenRecipes().addRecipe((ItemStack) mentry.getKey(), (ItemStack) mentry.getValue());
+                MachineRecipeManager.getCokeOvenRecipes().addRecipe((ItemStack) mentry.getKey(), (ItemStack) mentry.getValue());
             }
             for (Map.Entry<Object, ItemStack> entry : solidFuels.getCokeOvenRecipes().entrySet())
             {
-                CokeOvenRecipes.getCokeOvenRecipes().addRecipe((ItemStack)entry.getKey(), (ItemStack)entry.getValue());
+                MachineRecipeManager.getCokeOvenRecipes().addRecipe((ItemStack)entry.getKey(), (ItemStack)entry.getValue());
             }
         }
 

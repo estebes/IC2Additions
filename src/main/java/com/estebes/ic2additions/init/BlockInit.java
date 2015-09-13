@@ -1,6 +1,7 @@
 package com.estebes.ic2additions.init;
 
 import com.estebes.ic2additions.block.OreBauxite;
+import com.estebes.ic2additions.block.machine.BlockRollingMachine;
 import com.estebes.ic2additions.block.ore.OreSolid;
 import com.estebes.ic2additions.reference.Reference;
 import com.estebes.ic2additions.util.Ores;
@@ -17,6 +18,8 @@ public class BlockInit
     public static final OreSolid oreSilver = new OreSolid(Ores.ORE_SILVER.getName(), Ores.ORE_SILVER.getTexturePath(), Ores.ORE_SILVER.getHardness());
     public static final OreSolid oreIridium = new OreSolid(Ores.ORE_IRIDIUM.getName(), Ores.ORE_IRIDIUM.getTexturePath(), Ores.ORE_IRIDIUM.getHardness());
 
+    public static final BlockRollingMachine machine = new BlockRollingMachine();
+
     public static void init()
     {
         GameRegistry.registerBlock(oreBauxite, "OreBauxite");
@@ -24,6 +27,8 @@ public class BlockInit
         OreDictionary.registerOre("oreSilver", new ItemStack(oreSilver, 1));
         GameRegistry.registerBlock(oreIridium, Ores.ORE_IRIDIUM.getName());
         OreDictionary.registerOre("oreIridium", new ItemStack(oreIridium, 1));
+
+        GameRegistry.registerBlock(machine, "machine");
         //OreDictionary.registerOre("oreBauxite", oreBauxite);
     }
 }

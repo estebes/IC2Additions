@@ -1,5 +1,6 @@
 package com.estebes.ic2additions.util;
 
+import com.estebes.ic2additions.init.BlockInit;
 import com.estebes.ic2additions.reference.Reference;
 import ic2.api.item.IC2Items;
 import net.minecraft.item.ItemStack;
@@ -73,6 +74,12 @@ public enum Ores
 
     ORE_SILVER("OreSilver", "bauxite") {
         @Override
+        public ItemStack  getItemStack()
+        {
+            return new ItemStack(BlockInit.oreSilver, 1);
+        }
+
+        @Override
         public ItemStack getMaceratorRecipe()
         {
             ItemStack maceratorProduct = new ItemStack(IC2Items.getItem("crushedSilverOre").getItem(), 2, 5);
@@ -91,19 +98,21 @@ public enum Ores
 
     ORE_IRIDIUM("OreIridium", "OreIridium") {
         @Override
+        public ItemStack  getItemStack()
+        {
+            return new ItemStack(BlockInit.oreIridium, 1);
+        }
+
+        @Override
         public ItemStack getMaceratorRecipe()
         {
-            //ItemStack maceratorProduct = new ItemStack(IC2Items.getItem("crushedSilverOre").getItem(), 2, 5);
-
-            return null;
+            return new ItemStack(IC2Items.getItem("iridiumOre").getItem(), 1);
         }
 
         @Override
         public ItemStack getFurnaceRecipe()
         {
-            //ItemStack furnaceProduct = new ItemStack(IC2Items.getItem("silverIngot").getItem(), 1, 6);
-
-            return null;
+            return null; //new ItemStack(IC2Items.getItem("silverIngot").getItem(), 1, 6);
         }
 
     },
@@ -295,6 +304,7 @@ public enum Ores
         return hardness;
     }
 
+    public abstract ItemStack getItemStack();
     public abstract ItemStack getMaceratorRecipe();
     public abstract ItemStack getFurnaceRecipe();
 
