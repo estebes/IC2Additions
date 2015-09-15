@@ -1,6 +1,6 @@
 package com.estebes.ic2additions.item;
 
-import com.estebes.ic2additions.util.Plates;
+import com.estebes.ic2additions.util.Ingots;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -9,9 +9,9 @@ import net.minecraft.util.IIcon;
 
 import java.util.List;
 
-public class ItemPlate extends Item
+public class ItemIngot extends Item
 {
-    public ItemPlate()
+    public ItemIngot()
     {
         this.maxStackSize = 64;
         this.setHasSubtypes(true);
@@ -19,14 +19,14 @@ public class ItemPlate extends Item
         this.setUnlocalizedName("");
     }
 
-    private IIcon[] icons = new IIcon[Plates.values().length];
+    private IIcon[] icons = new IIcon[Ingots.values().length];
 
     @Override
     public void registerIcons(IIconRegister icon)
     {
-        for (Plates plate : Plates.values())
+        for (Ingots ingot : Ingots.values())
         {
-            icons[plate.ordinal()] = icon.registerIcon(plate.getTexturePath());
+            icons[ingot.ordinal()] = icon.registerIcon(ingot.getTexturePath());
         }
     }
 
@@ -39,15 +39,15 @@ public class ItemPlate extends Item
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list)
     {
-        for (Plates plate : Plates.values())
+        for (Ingots ingot : Ingots.values())
         {
-            list.add(new ItemStack(item, 1, plate.ordinal()));
+            list.add(new ItemStack(item, 1, ingot.ordinal()));
         }
     }
 
     @Override
     public String getUnlocalizedName(ItemStack stack)
     {
-        return this.getUnlocalizedName() + Plates.values()[stack.getItemDamage()].getName();
+        return this.getUnlocalizedName() + Ingots.values()[stack.getItemDamage()].getName();
     }
 }

@@ -2,10 +2,15 @@
 tile.OreBauxite.name=Bauxite Ore
 tile.OreSilver.name=Silver Ore
 
+# Ingots
+item.IngotAluminium.name=Aluminium Ingot
+
 # Plates
+item.PlateAluminium.name=Aluminium Plate
 item.PlateBronze.name=Bronze Plate
 item.PlateCopper.name=Copper Plate
 item.PlateGold.name=Gold Plate
+item.PlateIridium.name=Iridium Plate
 item.PlateIron.name=Iron Plate
 item.PlateLead.name=Lead Plate
 item.PlateSilver.name=Silver Plate
@@ -13,6 +18,15 @@ item.PlateStainlessSteel.name=Stainless Steel Plate
 item.PlateSteel.name=Steel Plate
 item.PlateTin.name=Tin Plate
 item.PlateTitanium.name=Titanium Plate
+
+# Electronic Tank
+tile.ElectronicTankMark1.name=Electronic Tank Mark 1
+tile.ElectronicTankMark2.name=Electronic Tank Mark 2
+tile.ElectronicTankMark3.name=Electronic Tank Mark 3
+tile.ElectronicTankMark4.name=Electronic Tank Mark 4
+tile.ElectronicTankMark5.name=Electronic Tank Mark 5
+
+# Electronic Storage Unit
 
 
 

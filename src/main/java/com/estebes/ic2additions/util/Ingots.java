@@ -1,39 +1,44 @@
 package com.estebes.ic2additions.util;
 
+import com.estebes.ic2additions.reference.Reference;
+
 public enum Ingots
 {
-    INGOT_SILVER {
+    INGOT_ALUMINIUM("IngotAluminium", "ingotAluminium"),
+    INGOT_SILVER("IngotSilver", "ingotSilver"),
+    INGOT_STEEL("IngotSteel", "ingotSteel");
 
-    }
-    ;
-    private final String name;
-    private final String texturePath;
+    private final String itemName;
+    private final String oreDictName;
 
     private Ingots()
     {
-        this("Unknown");
+        this(null);
     }
 
-    private Ingots(final String name)
+    private Ingots(final String itemName)
     {
-        this(name, null);
+        this(itemName, null);
     }
 
-    private Ingots(final String name, final String texturePath)
+    private Ingots(final String itemName, final String oreDictName)
     {
-        this.name = name;
-        this.texturePath = texturePath;
+        this.itemName = itemName;
+        this.oreDictName = oreDictName;
     }
 
     public String getName()
     {
-        return name;
+        return itemName;
+    }
+
+    public String getOreDictName()
+    {
+        return oreDictName;
     }
 
     public String getTexturePath()
     {
-        return texturePath;
+        return Reference.LOWERCASE_MOD_ID + ":" + itemName;
     }
-
-    //public abstract ArrayList getProducts();
 }

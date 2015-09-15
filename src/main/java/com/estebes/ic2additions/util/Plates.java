@@ -4,9 +4,11 @@ import com.estebes.ic2additions.reference.Reference;
 
 public enum Plates
 {
+    PLATE_ALUMINIUM("PlateAluminium", "plateAluminium"),
     PLATE_BRONZE("PlateBronze", "plateBronze"),
     PLATE_COPPER("PlateCopper", "plateCopper"),
     PLATE_GOLD("PlateGold", "plateGold"),
+    PLATE_IRIDIUM("PlateIridium", "plateIridium"),
     PLATE_IRON("PlateIron", "plateIron"),
     PLATE_LEAD("PlateLead", "plateLead"),
     PLATE_SILVER("PlateSilver", "plateSilver"),

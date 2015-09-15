@@ -1,19 +1,24 @@
 package com.estebes.ic2additions;
 
+import com.estebes.ic2additions.gui.GuiHandler;
 import com.estebes.ic2additions.init.BlockInit;
 import com.estebes.ic2additions.init.ItemInit;
 import com.estebes.ic2additions.init.TileEntityInit;
 import com.estebes.ic2additions.oregen.OreGenerator;
+import com.estebes.ic2additions.packethandler.PacketHandler;
 import com.estebes.ic2additions.proxy.ServerProxy;
 import com.estebes.ic2additions.recipes.MaceratorRecipes;
 import com.estebes.ic2additions.reference.Reference;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
@@ -28,7 +33,7 @@ public class IC2Additions
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent preinit)
     {
-        //PacketHandler.init();
+        PacketHandler.init();
     }
 
     @Mod.EventHandler
@@ -44,11 +49,16 @@ public class IC2Additions
 
         //OreGenerator.INSTANCE.addFeature(BlockInit.oreBauxite, 32, 1);
 
-        OreGenerator.INSTANCE.addFeature(BlockInit.oreIridium, 3, 1, 1, 128);
+        //OreGenerator.INSTANCE.addFeature(BlockInit.oreIridium, 3, 1, 1, 128);
 
-        GameRegistry.registerWorldGenerator(OreGenerator.INSTANCE, 0);
+        //GameRegistry.registerWorldGenerator(OreGenerator.INSTANCE, 0);
 
         proxy.registerRenderInformation();
+
+        if(Loader.isModLoaded("Waila"))
+        {
+            FMLInterModComms.sendMessage("Waila", "register", "com.estebes.ic2additions.plugin.PluginWaila.callbackRegister");
+        }
     }
 
     @EventHandler
